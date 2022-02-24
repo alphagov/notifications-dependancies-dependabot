@@ -1,0 +1,29 @@
+version: 2
+updates:
+- package-manager: pip
+  directory: "/"
+  schedule:
+    # daily, weekly, monthly
+    interval: "daily"
+  allow:
+    # explicitly allow flask
+    - dependency-name: "flask"
+  ignore:
+    # explicitly ignore subdependencies. this overrules the allow instructions. security updates overrule this.
+    - dependency-type: "indirect"
+    # don't bump marshmallow to v3 or greater
+    - dependency-name: "marshmallow"
+      versions: [">=3"]
+    # ignore minor version bumps for any lib. security updates overrule this.
+    - update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+  # dependabot won't open any extra if there are 5 PRs open already
+  open-pull-requests-limit: 5
+
+
+
+## THOUGHTS. 
+# can we have separate schedules for separate dependencies
+# can we bundle up version bumps into one PR
+# there's a concept of dependency groups - "Development" and "Production" at least. Not clear what exactly these are.
+# will limiting update-types in ignore stop it opening PRs for minor versions of flask? (i think it will)
+# should we use github comments to control dependabot (eg "@dependabot ignore this minor version")
