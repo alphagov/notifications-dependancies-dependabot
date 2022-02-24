@@ -9,13 +9,12 @@ updates:
     # explicitly allow flask
     - dependency-name: "flask"
   ignore:
-    # explicitly ignore subdependencies. this overrules the allow instructions. security updates overrule this.
-    - dependency-type: "indirect"
     # don't bump marshmallow to v3 or greater
     - dependency-name: "marshmallow"
       versions: [">=3"]
     # ignore minor version bumps for any lib. security updates overrule this.
-    - update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+    - dependency-name: "*"
+      update-types: ["version-update:semver-minor", "version-update:semver-patch"]
   # dependabot won't open any extra if there are 5 PRs open already
   open-pull-requests-limit: 5
 
