@@ -107,6 +107,8 @@ jmespath==0.10.0
     #   botocore
 kombu==5.2.1
     # via celery
+lxml==4.6.4
+    # via -r requirements.in
 mako==1.1.5
     # via alembic
 markupsafe==2.0.1
