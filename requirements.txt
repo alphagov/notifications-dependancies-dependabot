@@ -1,2 +1,2 @@
-eventlet==5.2.0
+eventlet==0.30.2
 notifications-utils @ git+https://github.com/alphagov/notifications-utils.git@53.0.0
