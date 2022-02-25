@@ -9,6 +9,8 @@ updates:
 - package-ecosystem: pip
   directory: "/"
   registries: "*"
+  # hmmmmmmmmm
+  insecure-external-code-execution: allow 
   schedule:
     # daily, weekly, monthly
     interval: "daily"
