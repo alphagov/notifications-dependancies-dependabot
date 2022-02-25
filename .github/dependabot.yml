@@ -1,7 +1,15 @@
 version: 2
+registries:
+  github-octocat:
+    type: git
+    url: https://github.com
+    username: x-access-token
+    password: ${{secrets.LEO_GITHUB_ACCESS_TOKEN}}
 updates:
 - package-ecosystem: pip
   directory: "/"
+  registries:
+    - "*"
   schedule:
     # daily, weekly, monthly
     interval: "daily"
@@ -26,3 +34,4 @@ updates:
 # there's a concept of dependency groups - "Development" and "Production" at least. Not clear what exactly these are.
 # will limiting update-types in ignore stop it opening PRs for minor versions of flask? (i think it will)
 # should we use github comments to control dependabot (eg "@dependabot ignore this minor version")
+
