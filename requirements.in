@@ -1,0 +1,2 @@
+Flask==1.1.2
+notifications-utils @ git+https://github.com/alphagov/notifications-utils.git@53.0.0
