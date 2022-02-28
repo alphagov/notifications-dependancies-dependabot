@@ -24,7 +24,13 @@ updates:
       update-types: ["version-update:semver-minor", "version-update:semver-patch"]
   # dependabot won't open any extra if there are 5 PRs open already
   open-pull-requests-limit: 5
-
+- package-ecosystem: "npm"
+  directory: "/"
+  schedule:
+    interval: "daily"
+  ignore:
+    # will this skip devDependencies?
+    - dependency-type: "development"
 
 
 ## THOUGHTS. 
