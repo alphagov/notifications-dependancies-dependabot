@@ -10,9 +10,9 @@ security warnings show up in top bar which is nice (https://github.com/alphagov/
 
 has its own page, you cant do much from there though - https://github.com/alphagov/notifications-dependancies-dependabot/network/dependencies
 
-it cant install pyproj and looks like it crashes as a result?
+npm integration seems fine and works cleanly - not sure if it would update a package lock file for us though. but this just works, which is definitely not my experience with the pip stuff
 
-npm integration seems fine and works cleanly - not sure if it would update a package lock file for us though.
+it cant install pyproj and looks like it crashes as a result? eg https://github.com/alphagov/notifications-dependancies-dependabot/network/updates/304458785
 
 it doesn't handle pip-compile nicely it looks like - got confused by some diffs. i'd like it to re-run pip compile ideally to refreeze dependencies.
 
