@@ -29,14 +29,15 @@ updates:
   schedule:
     interval: "daily"
   ignore:
-    # will this skip devDependencies?
-    - dependency-type: "development"
+  - dependency-name: "*"
+    update-types: ["version-update:semver-minor", "version-update:semver-patch"]
 
 
 ## THOUGHTS. 
 # i dont think we can have separate schedules for separate dependencies. we might be able to by having 
 # we cant bundle up version bumps into one PR
-# there's a concept of dependency groups - "Development" and "Production" at least. Not clear what exactly these are.
 # will limiting update-types in ignore stop it opening PRs for minor versions of flask? (i think it will)
 # should we use github comments to control dependabot (eg "@dependabot ignore this minor version")
 
+
+# there's a concept of dependency groups - "Development" and "Production" at least. Not clear what exactly these are. but these are about which updates to deps to filter (ie they're about how that release has been tagged, i think), rather than categorising our deps ourselves into pytest/flake vs flask/sqlalchemy etc.
