@@ -51,7 +51,7 @@
     "gulp-jshint": "2.1.0",
     "gulp-prettyerror": "2.0.0",
     "gulp-sass-lint": "1.4.0",
-    "jest": "24.7.1",
+    "jest": "28.1.0",
     "jest-date-mock": "^1.0.8",
     "jest-each": "^25.3.0",
     "jshint": "2.10.2",
